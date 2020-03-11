@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import MapView, { Marker, } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
-import { PermissionsAndroid, Dimensions } from 'react-native';
+import { PermissionsAndroid } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Notification from './services/Notification'
@@ -110,7 +110,7 @@ import {
     console.log('a', location, destination, 'D', result.distance)
     mapView.fitToCoordinates(result.coordinates);
    
-    if( result.distance < 0.200) {
+    if( result.distance < 0.100) {
       if(check == false){
         alarm()
       }
